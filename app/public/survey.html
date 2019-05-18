@@ -267,11 +267,21 @@
               $('#question10').val().trim()
             ]
           };
-
-      });
       // console.log('userInput');
          // console.log('userInput = ' + JSON.stringify(userInput));
-   </script>
+  		// Add user inputs to friends list
+			$.post('/api/friends', userInput)
+      		.done(function(data) {
+      			// console.log('response = ' + JSON.stringify(data));
+      			// Set the name and image values of friend match
+      			$('#userMatch').html(data.matchName);
+		    	$("#userMatchImage").attr("src", data.matchImage);
+		    	// Pop open the modal dialog
+      			$('#modal1').modal('open');
+      		});
+		});
+
+        </script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
