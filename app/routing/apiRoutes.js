@@ -8,7 +8,7 @@ module.exports = function(app) {
 
   // The app.get request handles when you visit the page
   app.get('/api/friends', function (req, res) {
-    res.json(friends);
+    res.json(friendsArray);
   });
   // The app.post adds a new friend
   app.post('/api/friends', function (req, res) {
