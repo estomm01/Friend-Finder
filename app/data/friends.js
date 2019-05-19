@@ -1,4 +1,4 @@
-var friends = [
+var friendsArray = [
   {
     "name": "Ahmed",
     "photo":"https://cdn10.bigcommerce.com/s-8v6b4hr6ku/products/1941/images/7005/3__73262.1499402853.1280.1280.jpg?c=2",
@@ -25,4 +25,4 @@ var friends = [
     "scores": ["4", "4", "2", "3", "2", "2", "3", "2", "4", "5"]
   }];
 
-module.exports = friends;
+module.exports = friendsArray;

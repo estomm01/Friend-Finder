@@ -1,26 +1,29 @@
 // The apiRoutes.js file includes two basic routes for app.get function and app.post function which used for JASON data and
 // results of all possible friends:
-
+var path = require('path');
 var friends = require('../data/friends.js');
 
 // Routing the apiRoutes with the app.get and app.post functions
-module.exports = function (app) {
+module.exports = function(app) {
 
   // The app.get request handles when you visit the page
   app.get('/api/friends', function (req, res) {
     res.json(friends);
   });
-  // The app.post request is for the user when they submit the data to the form
+  // The app.post adds a new friend
   app.post('/api/friends', function (req, res) {
-    // loop through all of the possible options
-
-    var name = "";
-    var photo = "";
+    //capture the user input object
+    var userInput = req.body;
+   // console.log('userInput = ' + JSON.stringfy(userInput));
+    var userResponses = userInput.scores;
+    //data to compute best friend match
+    var matchName = "";
+    var matchImage = "";
     var totalDifference = 1000;
-    var userResponses = req.body.scores;
 
+      // goes through all the exisiting friends in the friend list
     for (var i = 0; i < friends.length; i++) {
-
+     //console.log("friends");
       var diff = 0;
 
       for (var j = 0; j < userResponses.length; j++) {
@@ -31,13 +34,13 @@ module.exports = function (app) {
 
         if (diff < totalDifference){
           totalDifference = diff;
-          name = friends[i].name;
-          photo = friends[i].photo;
-          console.log(name);
+          matchName = friends[i].name;
+          matchImage = friends[i].photo;
+         // console.log(name);
         }
 
     };
-    friends.push(req.body);
-    res.json({matchName: name, matchImage: photo});
+    friends.push(userInput);
+    res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
   });
 };
