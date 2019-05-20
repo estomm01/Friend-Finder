@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/estomm01/Friend-Finder#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "path": "^0.12.7"
   }
 }

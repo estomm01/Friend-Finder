@@ -8,13 +8,13 @@ module.exports = function(app) {
 
   // The app.get request handles when you visit the page
   app.get('/api/friends', function (req, res) {
-    res.json(friendsArray);
+    res.json(friends);
   });
   // The app.post adds a new friend
   app.post('/api/friends', function (req, res) {
     //capture the user input object
     var userInput = req.body;
-   // console.log('userInput = ' + JSON.stringfy(userInput));
+    console.log(userInput);
     var userResponses = userInput.scores;
     //data to compute best friend match
     var matchName = "";
@@ -36,7 +36,7 @@ module.exports = function(app) {
           totalDifference = diff;
           matchName = friends[i].name;
           matchImage = friends[i].photo;
-         // console.log(name);
+          console.log(matchName);
         }
 
     };
