@@ -15,7 +15,7 @@
 https://pacific-atoll-18430.herokuapp.com/
 
 ## <a name="about-this-project"></a> About this project
-Carpool Buddy is a full stack application that matches you up with another user so that you can take advantage of the carpool lane and have someone to ride with to and from work. It includes a survey of 10 questions that help determine your compatibility with other users of the app. When you submit the survey, the app takes in your survey results and then compares your answers, question by question, with the answers from other users. The app does this by taking the difference between your answer and another user's answer for each question. Then, the app adds up the differences to calculate the total difference, which is the buddy compatibility score. The closest match is the user with the smallest difference. The app displays the name and photo of the user with the best overall match (this person is your carpool buddy).
+Friend Finder is a full stack application that matches you up with another person. It includes a survey of 10 questions that help determine your compatibility with the instructors of the class. When you submit the survey, the app takes in your survey results and then compares your answers, question by question. The app does this by taking the difference between your answer and answers  each question. Then, the app adds up the differences to calculate the total difference, which is the buddy compatibility score. The closest match is the user with the smallest difference. The app displays the name and photo of the user with the best overall match
 
 ## <a name="contribute"></a> Getting started
 To set up this application on your own computer, perform the following steps:
